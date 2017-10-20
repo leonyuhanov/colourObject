@@ -1,6 +1,6 @@
 #include "colourObject.h"
 
-char colourList[18]={255,0,0,255,255,0,0,255,0,0,255,255,0,0,255,255,0,255};
+char colourList[18]={64,0,0,64,64,0,0,64,0,0,64,64,0,0,64,64,0,64};
 colourObject cObject(64), dynamicCObject(64, 6, colourList);
 int colourIndex;
 byte rgbColour[3];
