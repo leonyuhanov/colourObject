@@ -4,7 +4,7 @@ Designed for fast, low memory footrprint, dynamic color generation
 
 The idea behind this came about because I wanted a simple way to dynamicly get a colour palete from 2 RGB colours.
 
-The whole spectrum can be derived using the 6 bas eprimary colours
+The whole spectrum can be derived using the 6 base eprimary colours
 ![Primary Colours](https://github.com/leonyuhanov/colourObject/blob/master/media/primarycols.png)
 
 By blending from each color to the next we can get the entire color spectrum(minus BLACK and WHITE but read on)
@@ -33,3 +33,4 @@ for(colourIndex=0; colourIndex<cObject._bandWidth; colourIndex++)
 
 What Im working on :
 - Dynamic Primary colour insertion to get a spectrum from any colour you want
+- Inserting BLACK and WHITE into the spectrum can be achieved after item 1 is completed
