@@ -56,9 +56,39 @@ colourObject::colourObject(char maxValue)
   _primaryColours[5][2] = maxValue;
 }
 
-colourObject::colourObject(char colourBlockCount, unsigned short int bandWidth)
+colourObject::colourObject(char maxValue, char colourBlockCount, char *rgbColourArray)
 {
-
+  _colourBlockCount = colourBlockCount;
+  _primaryColours = new char*[_colourBlockCount];
+  for(_cnt=0; _cnt<_colourBlockCount; _cnt++)
+  {
+    _primaryColours[_cnt] = new char[3];
+  }
+  //Init the Colour Table
+  for(_cnt=0; _cnt<3; _cnt++)
+  {
+    _colourTable[_cnt][0] = 0;
+    _colourTable[_cnt][1] = 0;
+    _colourTable[_cnt][2] = 0;
+  }
+  //Init the Modofier Table
+  for(_cnt=0; _cnt<2; _cnt++)
+  {
+    _modifierTable[_cnt][0] = 0;
+    _modifierTable[_cnt][1] = 0;
+    _modifierTable[_cnt][2] = 0;
+  }
+  //number of colours between 1 block and its neighbour    
+  _coloursPerBlock = maxValue;
+  //Total number of colours in this spectrum
+  _bandWidth = _coloursPerBlock*_colourBlockCount;
+  //Fill out primary colours based on array passed
+  for(_cnt=0; _cnt<colourBlockCount; _cnt++)
+  {
+    _primaryColours[_cnt][0] = rgbColourArray[_cnt*3];
+    _primaryColours[_cnt][1] = rgbColourArray[(_cnt*3)+1];
+    _primaryColours[_cnt][2] = rgbColourArray[(_cnt*3)+2];
+  }
 }
 
 void colourObject::getColour(short int colourIndex, byte *colourBlock)

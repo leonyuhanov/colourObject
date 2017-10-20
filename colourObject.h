@@ -7,7 +7,7 @@ class colourObject
   public:
     colourObject();
     colourObject(char maxValue);
-    colourObject(char colourBlockCount, unsigned short int bandWidth);
+    colourObject(char maxValue, char colourBlockCount, char *rgbColourArray);
     void getColour(short int colourIndex, byte *colourBlock);
     void gradientGenerator(unsigned short int colourIndex, unsigned short int bandwidth);
     
