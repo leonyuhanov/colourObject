@@ -49,7 +49,3 @@ for(colourIndex=0; colourIndex<cObject._bandWidth; colourIndex++)
    cObject.getColour(colourIndex, rgbColour);    
 }
 ```
-
-What Im working on :
-- Dynamic Primary colour insertion to get a spectrum from any colour you want
-- Inserting BLACK and WHITE into the spectrum can be achieved after item 1 is completed
